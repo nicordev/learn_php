@@ -1,8 +1,10 @@
 <?php
 
-namespace App;
+namespace App\MyFakeMailer;
 
-class MyFalseMailer
+use App\MailerInterface;
+
+class MyFakeMailer implements MailerInterface
 {
     public function sendMail(string $to, string $subject, string $content = "", string $from = "")
     {
