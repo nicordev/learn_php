@@ -3,6 +3,7 @@
 namespace App\MailSender;
 
 use App\MailerInterface;
+use App\MessageToSend\MessageToSend;
 use DPObserver\Subscriber\Subscriber;
 use SplSubject;
 
@@ -38,11 +39,16 @@ class MailSender extends Subscriber
      * </p>
      * @return void
      * @since 5.1.0
+     * @throws \Exception
      */
     public function update(SplSubject $subject)
     {
-        foreach ($this->destinationEmails as $destinationEmail) {
-            $this->mailer->sendMail($destinationEmail, $subject->subject, $subject->content, $this->from);
+        if ($subject instanceof MessageToSend) {
+            foreach ($this->destinationEmails as $destinationEmail) {
+                $this->mailer->sendMail($destinationEmail, $subject->subject, $subject->content, $this->from);
+            }
+        } else {
+            throw new \Exception(self::class . " has not been attached to a " . MessageToSend::class);
         }
     }
 }

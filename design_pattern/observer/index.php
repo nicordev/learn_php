@@ -11,6 +11,7 @@ require "autoload/autoload.php";
 $mailer = buildFakeMailer();
 $logger = new Logger("hello.log", "This text should never be logged");
 
+// Launch the system!
 if (isset($_POST['subject']) && !empty($_POST['subject'])) {
     // Publisher
     $message = new MessageToSend(
@@ -22,6 +23,23 @@ if (isset($_POST['subject']) && !empty($_POST['subject'])) {
     $message->notify();
 }
 
+// Throw an exception!
+if (isset($_GET['test']) && $_GET['test'] === "update") {
+    $coffeeCup = new class extends \DPObserver\Publisher\Publisher
+    {
+        public $isHot = true;
+    };
+
+    // We attach a wrong Subscriber
+    $coffeeCup->attach($logger);
+    try {
+        $coffeeCup->notify();
+    } catch (Exception $e) {
+        echo "<h2 style='color: red;'>Error: " . $e->getMessage() . "</h2>";
+    }
+}
+
+// Not relevant
 function buildFakeMailer()
 {
     $destinationEmails = [
@@ -50,3 +68,7 @@ function buildFakeMailer()
 
     <button>Send this message!</button>
 </form>
+
+<p>
+    <a href="?test=update">Throw an exception!</a>
+</p>
