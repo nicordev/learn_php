@@ -1,0 +1,30 @@
+{
+    "categories": [
+        {
+            "name": "Mes derniers sites",
+            "websites": [
+                {
+                    "name": "portfolio",
+                    "url": "https://portfolio.sansgodasses.com"
+                },
+                {
+                    "name": "blog",
+                    "url": "https://blog.sansgodasses.com"
+                }
+            ]
+        },
+        {
+            "name": "Mes vieux sites",
+            "websites": [
+                {
+                    "name": "carte",
+                    "url": "https://carte.ovh"
+                },
+                {
+                    "name": "sansgodasse",
+                    "url": "https://sansgodasses.com"
+                }
+            ]
+        }
+    ]
+}
