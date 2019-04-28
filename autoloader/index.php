@@ -2,7 +2,7 @@
 
 require "autoload/autoload.php";
 
-$myObject = new \App\MyClass();
+$myObject = new \App\MyClass\MyClass();
 
 ?>
 
