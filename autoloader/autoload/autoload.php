@@ -7,14 +7,13 @@
  */
 function loadClass(string $requiredClass)
 {
-    $mapNamespaces = [
+    $namespacePaths = [
         "App" => "src/"
     ];
     $classParts = explode("\\", $requiredClass);
-    $namespace = $classParts[0];
-    $path = array_diff($classParts, [$namespace]);
-
-    require $mapNamespaces[$namespace] . implode("/", $path) . ".php";
+    $namespace = array_shift($classParts);
+    $required = $namespacePaths[$namespace] . implode("/", $classParts) . ".php";
+    require $required;
 }
 
 spl_autoload_register('loadClass');
