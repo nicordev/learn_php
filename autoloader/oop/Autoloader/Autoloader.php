@@ -34,7 +34,7 @@ class Autoloader
     private function autoload(string $requiredClass)
     {
         $classParts = explode("\\", $requiredClass);
-        $namespace = array_shift($classParts);
+        $namespace = array_shift($classParts); // TODO: fetch the last part of the class string instead of this
         $required = $this->namespacePaths[$namespace] . implode("/", $classParts) . ".php";
         require $required;
     }
