@@ -1,0 +1,13 @@
+<style>
+    code {
+        background-color: rgba(0, 25, 75, 0.5);
+        color: whitesmoke;
+        border-radius: 2px;
+        padding: 2px;
+    }
+</style>
+
+<h1>Errors</h1>
+
+<p>Preceding a statement with <code>@</code> will silence errors, so <code>@include __DIR__ . '/unknown_file.lost';</code> will not generate an error.</p>
+<p>Now we do it again without the <code>@</code>, and then you take the error right in the face:</p>
