@@ -10,7 +10,5 @@ function absoluteDiagonalDifference(array $matrix)
         $sum2 += $matrix[$size - $i - 1][$i];
     }
 
-    $result = abs($sum1 - $sum2);
-
-    return $result;
+    return abs($sum1 - $sum2);
 }

@@ -9,12 +9,20 @@ function printMatrix(array $matrix)
     }
 }
 
-$matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [9, 8, 9]
+$data = [
+    [
+        [1, 2, 3],
+        [4, 5, 6],
+        [9, 8, 9]
+    ],
+    [
+        [11, 2, 4],
+        [4, 5, 6],
+        [10, 8, -12]
+    ]
 ];
 
-printMatrix($matrix);
-
-echo "Absolute diagonal difference: " . absoluteDiagonalDifference($matrix) . "\n";
+array_map(function ($matrix) {
+    printMatrix($matrix);
+    echo "Absolute diagonal difference: " . absoluteDiagonalDifference($matrix) . "\n";
+}, $data);
