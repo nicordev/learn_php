@@ -23,6 +23,7 @@ $data = [
 ];
 
 array_map(function ($matrix) {
+    echo "\n";
     printMatrix($matrix);
     echo "Absolute diagonal difference: " . absoluteDiagonalDifference($matrix) . "\n";
 }, $data);

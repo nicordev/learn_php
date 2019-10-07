@@ -11,4 +11,4 @@ $strings = [
 10 8 -12"
 ];
 
-echo convertArrayOfStringsToArrayOfArraysToStrings($strings);
+echo convertArrayOfMultilineStringsToStringRepresentingArray($strings);
