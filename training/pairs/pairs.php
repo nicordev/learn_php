@@ -5,8 +5,6 @@
  * https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
  */
 
-require __DIR__ . "/../convertStringToArray/convertStringToArray.php";
-
 function countPairs(array $values)
 {
     $counts = array_count_values($values);
