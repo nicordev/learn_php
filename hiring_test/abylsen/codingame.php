@@ -35,6 +35,46 @@ function optimalChange($s)
     }
 
     for ($i = 0, $size = count($coins); $i < $size; $i++) {
+        $divisionResult = intdiv($sum, $coins[$i]);
+
+        if ($divisionResult !== 0) {
+            $coinCounts[$i] = $divisionResult;
+            $sum -= $coins[$i] * $divisionResult;
+        }
+    }
+
+    $change->coin2 = $coinCounts[$coin2];
+    $change->bill5 = $coinCounts[$bill5];
+    $change->bill10 = $coinCounts[$bill10];
+
+    return $change;
+}
+
+/*
+ * Sent solution
+ */
+function optimalChange_sent($s)
+{
+    $change = new Change();
+    $coins = [10, 5, 2];
+    $coinCounts = [0, 0, 0];
+    $coin2 = 2;
+    $bill5 = 1;
+    $bill10 = 0;
+    $sum = $s;
+    $continue = false;
+
+    foreach ($coins as $coin) {
+        if ($sum % $coin === 0) {
+            $continue = true;
+        }
+    }
+
+    if (!$continue) {
+        return null;
+    }
+
+    for ($i = 0, $size = count($coins); $i < $size; $i++) {
         while ($sum % $coins[$i] < $sum) {
             $coinCounts[$i]++;
             $sum -= $coins[$i];
