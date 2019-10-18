@@ -2,29 +2,21 @@
 
 function countConsecutive1(int $number) {
 
+    $maxCount = $count = 0;
     $bin = decbin($number);
-    $occurrencesOf1 = [];
 
-    if ($bin === "0") {
-        return 0;
-    }
-
-    if ($bin === "1") {
-        return 1;
-    }
-
-    for ($i = $j = 0, $size = strlen($bin); $i < $size;) {
-        if (!isset($occurrencesOf1[$j])) {
-            $occurrencesOf1[] = 0;
+    for ($i = $j = 0, $size = strlen($bin); $i < $size; $i++) {
+        if ("1" === $bin[$i]) {
+            $count++;
+        } else {
+            $count = 0;
         }
-        for ($k = $i; $k < $size && $bin[$k] === "1"; $k++) {
-            $occurrencesOf1[$j]++;
+        if ($count > $maxCount) {
+            $maxCount = $count;
         }
-        $j++;
-        $i = ++$k;
     }
 
-    return max($occurrencesOf1);
+    return $maxCount;
 }
 
 $continue = true;
