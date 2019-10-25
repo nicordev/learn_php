@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * HackerRank
+ *
+ * https://www.hackerrank.com/challenges/encryption/problem
+ */
+
 // Complete the encryption function below.
 function encryption($s)
 {
