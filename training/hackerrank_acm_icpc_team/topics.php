@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * https://www.hackerrank.com/challenges/acm-icpc-team
+ */
+
 function getData(
     string $data,
     int &$attendeesCount,
