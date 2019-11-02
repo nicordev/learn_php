@@ -6,11 +6,12 @@ function isPrime(int $number)
         return false;
     }
 
-    for ($i = $number - 1; $i > 1; $i--) {
+    for ($i = 2; $i * $i <= $number; $i++) {
         if ($number % $i === 0) {
             return false;
         }
     }
+
     return true;
 }
 
