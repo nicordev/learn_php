@@ -26,7 +26,7 @@ function calculateFine($file)
             return 15 * $delay->days;
         }
 
-        return 500 * $delay->days;
+        return 500 * $delay->m;
     }
 
     return 10000;
