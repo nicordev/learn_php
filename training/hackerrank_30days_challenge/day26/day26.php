@@ -12,10 +12,18 @@ function buildDate(string $date)
     return new DateTime("{$year}-{$month}-{$day}");
 }
 
-$actualDate = buildDate(rtrim(fgets($_fp)));
-$expectedDate = buildDate(rtrim(fgets($_fp)));
+function run($file)
+{
+    $actualDate = buildDate(rtrim(fgets($file)));
+    $expectedDate = buildDate(rtrim(fgets($file)));
 
-var_dump($actualDate, $expectedDate);
+    echo "Actual date: " . $actualDate->format("Y/m/d") . "\n";
+    echo "Expected date: " . $expectedDate->format("Y/m/d") . "\n";
+    
+    var_dump($actualDate < $expectedDate);
+}
+
+run($_fp);
 
 ?>
 
