@@ -60,10 +60,14 @@ Timer
     {
         $current = $previous = new DateTime();
         $end = $current->add($duration);
-        $countdown = [$duration->h, $duration->i, $duration->s];
 
         while ($end >= $current = new DateTime()) {
-            echo implode(":", $countdown) . "\n";
+            $remainingTime = $end->diff($current);
+
+            if ($current->diff($previous)->s >= 1) { // TODO: not working properly
+                echo "{$remainingTime->h}:{$remainingTime->m}:{$remainingTime->s}\n";
+            }
+
             $previous = $current;
         }
     }
