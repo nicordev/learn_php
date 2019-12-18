@@ -1,0 +1,23 @@
+<script>
+    function almostIncreasingSequence(sequence) {
+
+        var max = min(sequence) - 1;
+        var cleanSequence = [sequence[0]];
+
+        for (var i = 0, size = sequence.length; i < size - 1; i++) {
+
+            if (sequence[i] < sequence[i + 1] && sequence[i] > max) {
+                cleanSequence[] = sequence[i + 1];
+                max = sequence[i];
+            }
+        }
+
+        if (sequence[size - 1] > max) {
+            cleanSequence[] = sequence[size - 1];
+        }
+        if (count(sequence) - count(cleanSequence) > 1) {
+            return false;
+        }
+        return true;
+    }
+</script>
