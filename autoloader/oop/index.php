@@ -3,7 +3,7 @@
 require "Autoloader/Autoloader.php";
 
 $autoloader = new \Autoloader\Autoloader([
-    "App" => "src/"
+    "App" => "src"
 ]);
 $autoloader->register();
 

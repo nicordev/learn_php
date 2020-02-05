@@ -35,6 +35,15 @@ class Autoloader
     {
         $classParts = explode("\\", $requiredClass);
         $namespace = array_shift($classParts); // TODO: fetch the last part of the class string instead of this
+
+        if (!isset($this->namespacePaths[$namespace])) {
+            throw new \Exception("The namespace \"{$namespace}\" can not be registered by the autoloader.");
+        }
+
+        if (!preg_match("#/$#", $this->namespacePaths[$namespace])) {
+            $this->namespacePaths[$namespace] .= "/";
+        }
+
         $required = $this->namespacePaths[$namespace] . implode("/", $classParts) . ".php";
         require $required;
     }
