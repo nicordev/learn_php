@@ -12,3 +12,12 @@ function testRegex(string $regex, array $testValues)
         echo "$result: $testValue\n";
     }
 }
+
+testRegex(
+    '#^http://.+\.local#',
+    [
+        'http://2cloud.local',
+        'http://2cloud.zog.local',
+        'http://2cloud.app'
+    ]
+);

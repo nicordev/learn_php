@@ -48,5 +48,13 @@ tryBreak([
             'name' => 'apple',
             'break' => true
         ]
+    ],
+    [
+        'name' => 'jean saisdavantage',
+        'break' => false,
+        'fruit' => [
+            'name' => 'apple',
+            'break' => true
+        ]
     ]
 ]);
