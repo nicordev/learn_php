@@ -19,3 +19,6 @@ $now = new DateTime();
 $end = new DateTime('2021-02-25');
 
 printInterval(getIntervalBetween2Dates($now, $end));
+
+$oneYearAgo = (new DateTime())->sub(new DateInterval('P1Y'))->format('Y-m-d');
+echo "\n$oneYearAgo\n";
