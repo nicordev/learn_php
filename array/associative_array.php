@@ -1,7 +1,7 @@
 <?php
 
 $fruitOwners = [
-    'bob' => 'apple', 
+    'bob' => 'apple',
     'sarah' => 'banana',
     'jim' => 'peach'
 ];

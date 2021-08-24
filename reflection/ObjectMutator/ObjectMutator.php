@@ -16,7 +16,6 @@ class ObjectMutator
         $reflectionProperty = $reflectionClass->getProperty($propertyName);
         $reflectionProperty->setAccessible(true);
         $reflectionProperty->setValue($object, $propertyValue);
-        $reflectionProperty->setAccessible(false);
     }
 
     /**
@@ -33,7 +32,6 @@ class ObjectMutator
         $reflectionMethod = new ReflectionMethod($object, $methodName);
         $reflectionMethod->setAccessible(true);
         $methodResult = $reflectionMethod->invokeArgs($object, $arguments);
-        $reflectionMethod->setAccessible(false);
 
         return $methodResult;
     }

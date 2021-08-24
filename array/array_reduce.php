@@ -1,8 +1,3 @@
-
--- array_reduce() --
-
--> Apply a callback to an array to replace the array by only one value.
-
 <?php
 
 function sum($total, $value)
