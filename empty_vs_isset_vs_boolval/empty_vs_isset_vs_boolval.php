@@ -3,7 +3,8 @@
 $fruits = [
     'apple' => 3,
     'pear' => [],
-    'cherry' => null
+    'cherry' => null,
+    'orange' => false,
 ];
 
 function compare(array $items, string $key)
@@ -23,7 +24,8 @@ function compare(array $items, string $key)
     }
 }
 
-compare($fruits, 'hello');
-compare($fruits, 'apple');
-compare($fruits, 'pear');
-compare($fruits, 'cherry');
+compare($fruits, 'unknown_fruit');
+
+foreach ($fruits as $fruit => $value) {
+    compare($fruits, $fruit);
+}
