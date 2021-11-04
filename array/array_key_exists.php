@@ -8,8 +8,8 @@ function calculateYearRatio($fruitStats)
 $fruitStats = [
     'stats' => [
         'year' => [
-            'fruitCount' => 0,
-            'ripeFruitCount' => 0,
+            'fruitCount' => 12,
+            'ripeFruitCount' => 4,
         ]
     ]
 ];
@@ -22,6 +22,16 @@ if (!empty($fruitStats['stats']['year']['fruitCount'])) {
 
 // array_key_exists does not work for a sub-key:
 if (array_key_exists('year', $fruitStats)) {
+    echo "yes!";
+}
+
+// won't break:
+if (empty($fruitStats['unknownKey'])) {
+    echo "these key does not exist or is empty.\n";
+}
+
+// will break:
+if (array_key_exists('year', $fruitStats['unknownKey'])) {
     echo "yes!";
 }
 
