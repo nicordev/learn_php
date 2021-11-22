@@ -35,8 +35,14 @@ if (0 === $basketElement->Fruit[2]->Price->count()) {
     echo "This object is empty or does not exist\n";
 }
 
+if ($basketElement->Fruit instanceof SimpleXMLElement && $basketElement->Fruit->count() > 0) {
+    echo "I have some fruits!\n";
+}
+
 var_dump($basketElement->Fruit[2]->Price);
 
 foreach ($basketElement->Fruit as $fruit) {
     echo "$fruit->Name\n";
 }
+
+echo (int) $basketElement->unknown;
