@@ -15,8 +15,7 @@ myBigFunction(3);
 $duration = microtime(true) - $start;
 echo "Elapsed time $duration s\n";
 
-
-
+// Snippet
 $start = microtime(true);
 myBigFunction(3);
 var_dump(microtime(true) - $start);
