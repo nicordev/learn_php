@@ -1,0 +1,128 @@
+[
+    {
+        "id": "1743948a-1bb6-4bef-a260-079eeb6b8b06",
+        "name": "Unit ticket",
+        "reference": "UT",
+        "description": "Ticket for a 1-hour travel",
+        "usableFrom": "2019-05-01T00:00:00Z",
+        "usableTo": "2020-05-01T23:59:59Z",
+        "validityEnd": "2019-05-12T12:00:00Z",
+        "price": {
+            "type": "FLAT",
+            "amount": 90,
+            "amountIncludingTaxes": 100,
+            "currency": "eur",
+            "taxes": [
+                {
+                    "name": "VAT",
+                    "rate": 10,
+                    "amount": 10
+                }
+            ]
+        },
+        "channels": [
+            "AGENCY",
+            "ONBOARD"
+        ],
+        "renewable": true,
+        "saleRestrictions": [
+            {
+                "network": {
+                    "is": [
+                        "RESEAU_SCOLAIRE"
+                    ]
+                },
+                "line": {
+                    "is": [
+                        "LA"
+                    ],
+                    "isnot": [
+                        "LB"
+                    ]
+                },
+                "trip": {
+                    "is": [
+                        "2001R01-1"
+                    ]
+                },
+                "stoparea": {
+                    "is": [
+                        "06112"
+                    ]
+                },
+                "stoppoint": {
+                    "is": [
+                        "05878"
+                    ]
+                },
+                "zone": {
+                    "isnot": [
+                        "ABCD"
+                    ]
+                },
+                "weekday": {
+                    "is": [
+                        "0110101"
+                    ]
+                },
+                "time": {
+                    "is": [
+                        "1pm"
+                    ]
+                },
+                "calendar": {
+                    "is": [
+                        "CAL_SOLAIRE"
+                    ]
+                }
+            }
+        ],
+        "usageRestrictions": [
+            "string"
+        ],
+        "allowProfiles": [
+            [
+                {
+                    "id": "1743948a-1bb6-4bef-a260-079eeb6b8b06",
+                    "reference": "CHILD_PROFILE",
+                    "name": "Child",
+                    "type": "IMPLICIT",
+                    "startAge": null,
+                    "endAge": 18
+                },
+                {
+                    "id": "1743948a-1bb6-4bef-a260-079eeb6b8b06",
+                    "reference": "STUDENT_PROFILE",
+                    "name": "Student",
+                    "type": "EXPLICIT",
+                    "endDate": "2021-09-01",
+                    "endAge": "2022-07-31"
+                }
+            ]
+        ],
+        "denyProfiles": [
+            [
+                {
+                    "id": "1743948a-1bb6-4bef-a260-079eeb6b8b06",
+                    "reference": "CHILD_PROFILE",
+                    "name": "Child",
+                    "type": "IMPLICIT",
+                    "startAge": null,
+                    "endAge": 18
+                },
+                {
+                    "id": "1743948a-1bb6-4bef-a260-079eeb6b8b06",
+                    "reference": "STUDENT_PROFILE",
+                    "name": "Student",
+                    "type": "EXPLICIT",
+                    "endDate": "2021-09-01",
+                    "endAge": "2022-07-31"
+                }
+            ]
+        ],
+        "saleableFrom": "2019-05-01T00:00:00Z",
+        "saleableUntil": "2019-05-01T00:00:00Z",
+        "supportType": "PASSENGER_TAG",
+        "usageType": "SINGLE"
+    }
+]
